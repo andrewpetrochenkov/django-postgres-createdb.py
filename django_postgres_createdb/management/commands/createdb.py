@@ -3,7 +3,6 @@ from django.core import management
 from django.core.management.base import BaseCommand
 import subprocess
 
-
 """
 https://www.postgresql.org/docs/current/app-createdb.html
 """
@@ -13,7 +12,7 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         super(Command, self).add_arguments(parser)
-        parser.add_argument('alias', default='default')
+        parser.add_argument('alias',nargs='?', default="default")
 
     def handle(self, *args, **options):
         alias = options.get('alias')
