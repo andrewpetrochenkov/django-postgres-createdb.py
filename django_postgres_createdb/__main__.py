@@ -18,9 +18,6 @@ USAGE = 'python -m %s [alias]' % MODULE_NAME
 def _cli(alias=None):
     if not alias:
         alias = "default"
-    DJANGO_SETTINGS_MODULE = os.getenv('DJANGO_SETTINGS_MODULE')
-    if not DJANGO_SETTINGS_MODULE:
-        sys.exit("DJANGO_SETTINGS_MODULE unknown")
     django.setup()
     db_settings = settings.DATABASES[alias]
     args = ['createdb']

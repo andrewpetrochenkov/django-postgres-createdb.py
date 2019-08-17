@@ -44,7 +44,6 @@ DATABASES = {
 ```
 
 ```bash
-$ export DJANGO_SETTINGS_MODULE=settings
 $ python manage.py createdb
 $ python manage.py createdb "default"
 ```
