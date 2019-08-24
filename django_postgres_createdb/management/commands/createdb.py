@@ -20,7 +20,7 @@ class Command(BaseCommand):
         db_settings = settings.DATABASES[alias]
         args = ['createdb']
         if 'USER' in db_settings:
-            args+=["-O",db_settings['USER']]
+            args+=["-U",db_settings['USER']]
         if 'HOST' in db_settings:
             args+=["-h",db_settings['HOST']]
         if 'PORT' in db_settings:
